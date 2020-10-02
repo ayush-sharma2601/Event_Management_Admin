@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.JudgeLogin">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:id="@+id/main_page"
+            android:layout_above="@id/swiper"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/judge_login"
+                android:fontFamily="@font/montserrat_extra_bold"
+                android:textSize="24sp"
+                android:textColor="@color/white"
+                />
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/judge_code_instruction"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="40dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="17sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginHorizontal="50dp"
+                android:id="@+id/code_layout"
+                android:hint="@string/enter_code_here"
+                android:textColorHint="@color/white"
+                app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
+                app:hintTextColor="@color/white"
+                app:boxStrokeColor="@color/input_text_field_color_invert"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/code_field"
+                    android:maxLines="1"
+                    android:textSize="17sp"
+                    android:background="@color/colorAccent"
+                    android:inputType="text"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/white" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/login"
+                android:layout_marginTop="35dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginLeft="100dp"
+                android:text="@string/login"
+                android:gravity="center"
+                android:textColor="@color/colorAccent"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="17sp"
+                android:textAllCaps="false"
+                app:cornerRadius="30dp"
+                style="@style/TextAppearance.MaterialComponents.Button" />
+
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/swiper"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/judge_login_swipe_bg">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:layout_weight="1"
+                android:text="@string/swipe_for_admin"
+                android:textColor="@color/colorAccent"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/montserrat_regular"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_bi_arrow_up_left"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:rotation="180"
+                app:tint="@color/colorAccent"
+                android:id="@+id/right_arrow_icon"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

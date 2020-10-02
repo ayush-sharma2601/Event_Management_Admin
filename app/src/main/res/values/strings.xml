@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Event_Management_Admin</string>
+    <string name="club_name">Inner Wheel Club of Vasco-Da-Gama</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="admin_login">Admin Login</string>
+    <string name="email_id">Email ID</string>
+    <string name="password">Password</string>
+    <string name="login">login</string>
+    <string name="not_an_admin">not an admin? </string>
+    <string name="register_here"> Register</string>
+    <string name="forgot_password">forgot password?</string>
+    <string name="swipe_for_judge">Swipe to login as a judge</string>
+    <string name="judge_login">Judge Login</string>
+    <string name="judge_code_instruction">Enter the unique code provided to you by the admin.</string>
+    <string name="enter_code_here">Enter code here</string>
+    <string name="swipe_for_admin">Swipe to login as an admin</string>
+    <string name="admin_register">Admin Register</string>
+    <string name="name">Name</string>
+    <string name="admin_key">Admin Key</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_an_admin">Already an Admin?</string>
+    <string name="login_here">Login</string>
+    <string name="register">register</string>
+</resources>
