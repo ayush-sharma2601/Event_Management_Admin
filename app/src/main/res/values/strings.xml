@@ -22,4 +22,12 @@
     <string name="already_an_admin">Already an Admin?</string>
     <string name="login_here">Login</string>
     <string name="register">register</string>
+    <string name="dummy_name">Hi, Nipun</string>
+    <string name="profile">profile</string>
+    <string name="upcoming_events">Upcoming events</string>
+    <string name="past_events">Past events</string>
+    <string name="dummy_competition_name">Art Competition</string>
+    <string name="dummy_date">17th December, 2020</string>
+    <string name="dummy_genre">Drawing</string>
+    <string name="desc">desc</string>
 </resources>

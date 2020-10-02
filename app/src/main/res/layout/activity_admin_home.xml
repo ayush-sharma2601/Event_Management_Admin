@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fillViewport="true">
+    
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    tools:context=".Activities.AdminHome">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:paddingEnd="10dp"
+        android:layout_toStartOf="@id/admin_profile"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/colorAccent"
+        android:layout_marginTop="47dp"
+        android:layout_marginStart="36dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/dummy_name"
+        android:id="@+id/admin_greeting"/>
+    
+    <ImageView
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:id="@+id/admin_profile"
+        android:src="@drawable/ic_user"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="36dp"
+        android:contentDescription="@string/profile" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:fontFamily="@font/montserrat_medium"
+        android:layout_below="@id/admin_greeting"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/dark_grey"
+        android:text="@string/upcoming_events"
+        android:layout_marginStart="30dp"
+        android:id="@+id/upcoming_header"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/upcoming_events_rv"
+        android:layout_below="@id/upcoming_header"
+        android:layout_marginTop="10dp"
+        />
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:fontFamily="@font/montserrat_medium"
+        android:layout_below="@id/upcoming_events_rv"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/dark_grey"
+        android:text="@string/past_events"
+        android:layout_marginStart="30dp"
+        android:id="@+id/past_header"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/past_events_rv"
+        android:layout_below="@id/past_header"
+        android:layout_marginTop="10dp"
+        />
+
+
+    
+
+</RelativeLayout>
+</ScrollView>
