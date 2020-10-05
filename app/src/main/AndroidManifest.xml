@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.AdminHome"></activity>
+        <activity android:name=".Activities.DivisionsCreation"></activity>
+        <activity android:name=".Activities.NewEventGroupDivision" />
+        <activity android:name=".Activities.CreateNewEvent" />
+        <activity android:name=".Activities.AdminHome" />
         <activity
             android:name=".Activities.AdminRegister"
             android:windowSoftInputMode="adjustPan" />

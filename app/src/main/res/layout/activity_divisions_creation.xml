@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".Activities.DivisionsCreation">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:layout_width="17dp"
+            android:layout_height="14dp"
+            android:background="@drawable/ic_back"
+            android:layout_marginTop="47dp"
+            android:layout_marginStart="36dp"
+            android:id="@+id/back_btn"/>
+        
+        
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/black"
+            android:layout_below="@id/back_btn"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="36dp"
+            android:id="@+id/division_number"
+            android:text="Division 1"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/division_number"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="36dp"
+            android:id="@+id/div_name_layout"
+            android:hint="Name (Ages 8 - 10 etc)"
+            android:textColorHint="@color/grey"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
+            app:hintTextColor="@color/colorAccent"
+            app:boxStrokeColor="@color/input_text_field_color"
+            app:endIconDrawable="@drawable/ic_calender"
+            app:endIconTint="@color/colorAccent"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/division_name"
+            android:maxLines="1"
+            android:focusable="false"
+            android:textSize="17sp"
+            android:background="@color/white"
+            android:inputType="text"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="@color/colorAccent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:id="@+id/age_holder"
+        android:gravity="center_horizontal"
+        android:layout_marginHorizontal="36dp"
+        android:layout_below="@id/div_name_layout"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:id="@+id/start_age_layout"
+            android:hint="@string/start_age"
+            android:textColorHint="@color/grey"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
+            app:hintTextColor="@color/colorAccent"
+            app:boxStrokeColor="@color/input_text_field_color"
+            app:endIconDrawable="@drawable/ic_calender"
+            app:endIconTint="@color/colorAccent"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/start_age_field"
+                android:maxLines="1"
+                android:focusable="false"
+                android:textSize="17sp"
+                android:background="@color/white"
+                android:inputType="number"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/colorAccent" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:id="@+id/end_age_layout"
+            android:hint="@string/end_age"
+            android:textColorHint="@color/grey"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
+            app:hintTextColor="@color/colorAccent"
+            app:boxStrokeColor="@color/input_text_field_color"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/end_age_field"
+                android:maxLines="1"
+                android:focusable="false"
+                android:textSize="17sp"
+                android:background="@color/white"
+                android:inputType="number"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/colorAccent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/age_holder"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="36dp"
+        android:id="@+id/div_topic_layout"
+        android:hint="@string/topic_for_this_division"
+        android:textColorHint="@color/grey"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
+        app:hintTextColor="@color/colorAccent"
+        app:boxStrokeColor="@color/input_text_field_color"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/topic_field"
+            android:maxLines="1"
+            android:textSize="17sp"
+            android:background="@color/white"
+            android:inputType="text"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="@color/colorAccent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/black"
+            android:layout_below="@id/div_topic_layout"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="36dp"
+            android:id="@+id/judge_head"
+            android:text="Judge"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/judge_head"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="36dp"
+            android:id="@+id/judge_mail_layout"
+            android:hint="Email Id"
+            android:textColorHint="@color/grey"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
+            app:hintTextColor="@color/colorAccent"
+            app:boxStrokeColor="@color/input_text_field_color"
+            app:endIconDrawable="@drawable/ic_calender"
+            app:endIconTint="@color/colorAccent"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/judge_mail"
+                android:maxLines="1"
+                android:focusable="false"
+                android:textSize="17sp"
+                android:background="@color/white"
+                android:inputType="text"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/colorAccent" />
+        </com.google.android.material.textfield.TextInputLayout>
+        
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:background="@drawable/button_bg"
+            android:layout_below="@id/judge_mail_layout"
+            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="20dp"
+            android:backgroundTint="@color/eventRed"
+            android:text="@string/remove_group"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat_bold"
+            android:id="@+id/remove_division_btn"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:background="@drawable/button_bg"
+            android:layout_below="@id/remove_division_btn"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:backgroundTint="@color/colorAccent"
+            android:text="@string/confirm_and_save"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat_bold"
+            android:id="@+id/confirm_division_btn"/>
+
+
+    </RelativeLayout>
+
+</ScrollView>

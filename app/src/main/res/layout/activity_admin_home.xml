@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:fillViewport="true">
+    android:orientation="vertical">
     
 <RelativeLayout 
     android:layout_width="match_parent"
@@ -74,10 +74,45 @@
         android:id="@+id/past_events_rv"
         android:layout_below="@id/past_header"
         android:layout_marginTop="10dp"
+        android:nestedScrollingEnabled="false"
+        android:layout_above="@id/bottombar"
+        android:layout_marginBottom="10dp"
         />
 
 
-    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/admin_login_swipe_bg"
+        android:id="@+id/bottombar"
+        android:layout_marginStart="10dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/white"
+            android:text="@string/add_new_event"
+            android:layout_marginStart="30dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/bottom_bar_text"/>
+        
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_fab"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:elevation="20dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/new_event_button"
+            />
+
+    </RelativeLayout>
+
 
 </RelativeLayout>
-</ScrollView>
+</LinearLayout>

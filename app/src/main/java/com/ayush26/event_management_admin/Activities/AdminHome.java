@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.ayush26.event_management_admin.Adapters.EventsRVAdapter;
 import com.ayush26.event_management_admin.Models.EventRVItem;
@@ -36,6 +38,13 @@ public class AdminHome extends AppCompatActivity {
         attachAdapter();
 
         updateData();
+
+        adminHomeBinding.newEventButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AdminHome.this,CreateNewEvent.class));
+            }
+        });
 
     }
 
