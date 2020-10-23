@@ -1,14 +1,34 @@
 package com.ayush26.event_management_admin.Models;
 
 public class EventRVItem {
+    private String id;
     private String eventName;
     private String eventDate;
     private String eventGenre;
+    private String eventState;
 
-    public EventRVItem(String eventName, String eventDate, String eventGenre) {
+    public EventRVItem(String id, String eventName, String eventDate, String eventGenre, String eventState) {
+        this.id = id;
         this.eventName = eventName;
         this.eventDate = eventDate;
         this.eventGenre = eventGenre;
+        this.eventState = eventState;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getEventState() {
+        return eventState;
+    }
+
+    public void setEventState(String eventState) {
+        this.eventState = eventState;
     }
 
     public String getEventName() {

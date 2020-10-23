@@ -20,7 +20,7 @@ public class NewEventGroupDivision extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         groupDivisionBinding = ActivityNewEventGroupDivisionBinding.inflate(getLayoutInflater());
         setContentView(groupDivisionBinding.getRoot());
-
+        attachID();
         createEventBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -28,7 +28,7 @@ public class NewEventGroupDivision extends AppCompatActivity {
                 finish();
             }
         });
-        attachID();
+
     }
 
     private void attachID() {

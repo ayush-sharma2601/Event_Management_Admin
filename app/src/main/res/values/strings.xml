@@ -22,7 +22,7 @@
     <string name="already_an_admin">Already an Admin?</string>
     <string name="login_here">Login</string>
     <string name="register">register</string>
-    <string name="dummy_name">Hi, Nipun</string>
+    <string name="dummy_name">Hi, Admin</string>
     <string name="profile">profile</string>
     <string name="upcoming_events">Upcoming events</string>
     <string name="past_events">Past events</string>
@@ -62,4 +62,22 @@
     <string name="topic_for_this_division">Topic for this division</string>
     <string name="remove_group">Remove Group</string>
     <string name="confirm_and_save">Confirm and Save</string>
+    <string name="rs_8967">Rs 8967</string>
+    <string name="results">Results</string>
+    <string name="age_grp_1">Division 1</string>
+    <string name="first_place">First Place</string>
+    <string name="nipun_aggarwal">Nipun Aggrawal</string>
+    <string name="rs_1000">Rs 1000</string>
+    <string name="second_place">Second Place</string>
+    <string name="harsh_nigam">Harsh Nigam</string>
+    <string name="entries">Entries</string>
+    <string name="save_and_confirm">Save and Confirm</string>
+    <string name="add">Add</string>
+    <string name="delete">Delete</string>
+    <string name="group_instruction">Groups can be added now or later in the Edit Event option.</string>
+    <string name="hi_judge">Hi, Judge</string>
+    <string name="edit_event">Edit Event</string>
+    <string name="update">update</string>
+    <string name="edit_divisions">Edit Divisions</string>
+    <string name="add_divisions">Add Division</string>
 </resources>

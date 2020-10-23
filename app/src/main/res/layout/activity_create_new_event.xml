@@ -353,16 +353,15 @@
             app:boxStrokeColor="@color/input_text_field_color"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/new_event_divisions_field"
-                android:maxLines="1"
-                android:textSize="17sp"
+                android:textSize="14sp"
+                android:text="@string/group_instruction"
                 android:background="@color/white"
-                android:inputType="number"
-                android:fontFamily="@font/roboto_regular"
-                android:textColor="@color/colorAccent" />
+                android:fontFamily="@font/montserrat_medium"
+                android:textColor="@color/dark_grey" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -394,7 +393,7 @@
             android:layout_marginHorizontal="20dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/button_bg"
-            android:text="@string/next"
+            android:text="@string/create_event"
             android:fontFamily="@font/montserrat_bold"
             android:textColor="@color/white"
             android:textAllCaps="false"

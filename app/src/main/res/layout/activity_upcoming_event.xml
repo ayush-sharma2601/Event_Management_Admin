@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".Activities.EventOnClick">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:layout_width="17dp"
+            android:layout_height="14dp"
+            android:background="@drawable/ic_back"
+            android:layout_marginTop="47dp"
+            android:layout_marginStart="36dp"
+            android:id="@+id/back_btn"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/back_btn"
+            android:id="@+id/comp_header"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="30dp"
+                android:paddingStart="30dp"
+                tools:ignore="RtlSymmetry">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="17sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:id="@+id/competition_name" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:textColor="@color/colorAccent"
+                    android:fontFamily="@font/montserrat_extra_bold"
+                    android:id="@+id/competition_genre"
+                    android:layout_marginTop="5dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingEnd="40dp"
+                android:paddingTop="30dp"
+                android:gravity="end"
+                tools:ignore="RtlSymmetry">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/date"
+                    android:textColor="@color/dark_grey"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="14sp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/start"
+                        android:textColor="@color/dark_grey"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textSize="14sp"
+                        android:layout_marginEnd="5dp"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:id="@+id/start_time"
+                        android:textColor="@color/dark_grey"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/end"
+                        android:textColor="@color/dark_grey"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textSize="14sp"
+                        android:layout_marginEnd="5dp"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:id="@+id/end_time"
+                        android:textColor="@color/dark_grey"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_below="@id/comp_header"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:id="@+id/prize_container">
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/black"
+                android:text=""
+                android:id="@+id/first_prize_text"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/black"
+                android:text=""
+                android:id="@+id/second_prize_text"
+                android:layout_marginTop="10dp"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/black"
+                android:text=""
+                android:id="@+id/third_prize_text"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:layout_toEndOf="@id/prize_container"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/comp_header"
+            android:src="@drawable/ic_trophy"
+            android:layout_marginTop="30dp"
+            android:id="@+id/trophy"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/dark_grey"
+            android:layout_below="@id/trophy"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="36dp"
+            android:text="@string/judges_instructions"
+            android:id="@+id/instructions_header"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/black"
+            android:text=""
+            android:layout_below="@id/instructions_header"
+            android:layout_marginHorizontal="36dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/competition_instructions_field"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/dark_grey"
+            android:layout_below="@id/competition_instructions_field"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="36dp"
+            android:text="@string/participation_fees"
+            android:id="@+id/fees_header"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:layout_below="@id/competition_instructions_field"
+            android:textColor="@color/black"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="36dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="36dp"
+            android:text=""
+            android:id="@+id/competition_fees"/>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:rowCount="2"
+            android:paddingHorizontal="20dp"
+            android:layout_below="@id/collection_header"
+            android:layout_marginTop="20dp"
+            android:visibility="invisible"
+            android:id="@+id/upcoming_btn_set"
+            android:columnCount="2">
+            <Button
+                android:layout_height="62dp"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:layout_column="0"
+                android:layout_marginEnd="15dp"
+                android:layout_row="0"
+                android:id="@+id/delete_event"
+                android:textSize="17sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Delete Event"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/eventRed"
+                android:background="@drawable/button_bg"/>
+            <Button
+                android:layout_height="62dp"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:layout_column="1"
+                android:layout_row="0"
+                android:id="@+id/alert_event"
+                android:textSize="17sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Send Alert"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/yellowSun"
+                android:background="@drawable/button_bg"/>
+
+            <Button
+            android:layout_height="62dp"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_column="0"
+            android:layout_marginEnd="15dp"
+            android:layout_row="1"
+                android:layout_marginTop="15dp"
+            android:id="@+id/edit_event"
+            android:textSize="17sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Edit Event"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/colorAccent"
+            android:background="@drawable/button_bg"/>
+
+            <Button
+            android:layout_height="62dp"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_column="1"
+            android:layout_row="1"
+                android:layout_marginTop="15dp"
+            android:id="@+id/start_event"
+            android:textSize="17sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Start Event"
+            android:textAllCaps="false"
+                android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/good_green"
+            android:background="@drawable/button_bg"/>
+        </GridLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/dark_grey"
+            android:layout_below="@id/fees_header"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="36dp"
+            android:text="Registrations"
+            android:id="@+id/distribution_header"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="@color/dark_grey"
+            android:layout_below="@id/distribution_header"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="36dp"
+            android:text="Long press on division to get Judge Code."
+            android:id="@+id/distribution_info"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/distribution_info"
+            android:layout_marginTop="10dp"
+            android:id="@+id/registration_distribution_rv"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/dark_grey"
+            android:layout_below="@id/registration_distribution_rv"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="36dp"
+            android:text="Collection"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/collection_header"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_below="@id/collection_header"
+            android:layout_marginHorizontal="20dp"
+            android:text="View Results"
+            android:textSize="17sp"
+            android:textAllCaps="false"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/white"
+            android:background="@drawable/button_bg"
+            android:layout_marginBottom="20dp"
+            android:visibility="gone"
+            android:id="@+id/view_result_btn"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:layout_below="@id/registration_distribution_rv"
+            android:textColor="@color/black"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="36dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="36dp"
+            android:text=""
+            android:id="@+id/competition_collection"/>
+
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/collection_header"
+            android:rowCount="1"
+            android:columnCount="2"
+            android:visibility="invisible"
+            android:layout_marginBottom="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:id="@+id/event_day_btn_set">
+
+            <Button
+                android:layout_height="62dp"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:layout_column="0"
+                android:layout_marginEnd="15dp"
+                android:layout_row="0"
+                android:id="@+id/entries_event"
+                android:textSize="17sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="See entries"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/colorAccent"
+                android:background="@drawable/button_bg"/>
+            <Button
+                android:layout_height="62dp"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:layout_column="1"
+                android:layout_row="0"
+                android:id="@+id/end_event"
+                android:textSize="17sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="End event"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/eventRed"
+                android:background="@drawable/button_bg"/>
+        </GridLayout>
+
+
+    </RelativeLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</ScrollView>

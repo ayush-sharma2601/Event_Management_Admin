@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ayush26.event_management_admin">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
@@ -9,7 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.DivisionsCreation"></activity>
+        <activity android:name=".Activities.EditDivisionActivity"></activity>
+        <activity android:name=".Activities.SingleSubmissionPage" />
+        <activity android:name=".Activities.EditEventActivity" />
+        <activity android:name=".Activities.JudgeHome" />
+        <activity android:name=".Activities.AgeGroupEntriesGrid" />
+        <activity android:name=".Activities.EntriesAgeGroups" />
+        <activity android:name=".Activities.ResultsActivity" />
+        <activity android:name=".Activities.EventOnClick" />
+        <activity android:name=".Activities.DivisionsCreation" />
         <activity android:name=".Activities.NewEventGroupDivision" />
         <activity android:name=".Activities.CreateNewEvent" />
         <activity android:name=".Activities.AdminHome" />

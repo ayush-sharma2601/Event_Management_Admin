@@ -20,18 +20,20 @@
         android:layout_centerVertical="true"
         android:layout_marginStart="25dp"
         android:layout_alignParentStart="true"
-        android:layout_toStartOf="@id/icon_go"
+        android:layout_toStartOf="@id/participants_number"
         android:id="@+id/division_name"/>
     
-    <ImageView
-        android:layout_width="13dp"
-        android:layout_height="11dp"
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="25dp"
-        android:src="@drawable/ic_back"
-        android:rotation="180"
-        android:id="@+id/icon_go"
+        android:textSize="17sp"
+        android:id="@+id/participants_number"
+        android:text="48"
+        android:textColor="@color/white"
+        android:fontFamily="@font/montserrat_bold"
         app:tint="@color/white" />
     
 </RelativeLayout>

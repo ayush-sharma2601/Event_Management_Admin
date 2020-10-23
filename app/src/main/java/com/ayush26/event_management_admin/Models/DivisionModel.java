@@ -1,26 +1,67 @@
 package com.ayush26.event_management_admin.Models;
 
-public class DivisionModel {
-    private String divisionName;
-    private int startAge;
-    private int endAge;
-    private String divisionTopic;
-    private String judgeEmail;
+import android.os.Parcelable;
 
-    public DivisionModel(String divisionName, int startAge, int endAge, String divisionTopic, String judgeEmail) {
-        this.divisionName = divisionName;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+public class DivisionModel {
+
+    @SerializedName("start_age")
+    @Expose
+    private int startAge;
+
+    @SerializedName("end_age")
+    @Expose
+    private int endAge;
+
+    @SerializedName("name")
+    @Expose
+    private String divisionTopic;
+
+    @SerializedName("age_group_id")
+    @Expose
+    private String divisionID;
+
+    @SerializedName("competition_id")
+    @Expose
+    private String competition_id;
+
+    @SerializedName("participants")
+    @Expose
+    private ParticipantModel[] participantNum;
+;
+
+    public DivisionModel(int startAge, int endAge, String divisionTopic, String divisionID, String competition_id) {
         this.startAge = startAge;
         this.endAge = endAge;
         this.divisionTopic = divisionTopic;
-        this.judgeEmail = judgeEmail;
+        this.divisionID = divisionID;
+        this.competition_id = competition_id;
     }
 
-    public String getDivisionName() {
-        return divisionName;
+    public String getCompetition_id() {
+        return competition_id;
     }
 
-    public void setDivisionName(String divisionName) {
-        this.divisionName = divisionName;
+    public void setCompetition_id(String competition_id) {
+        this.competition_id = competition_id;
+    }
+
+    public ParticipantModel[] getParticipantNum() {
+        return participantNum;
+    }
+
+    public void setParticipantNum(ParticipantModel[] participantNum) {
+        this.participantNum = participantNum;
+    }
+
+    public String getDivisionID() {
+        return divisionID;
+    }
+
+    public void setDivisionID(String divisionID) {
+        this.divisionID = divisionID;
     }
 
     public int getStartAge() {
@@ -47,11 +88,4 @@ public class DivisionModel {
         this.divisionTopic = divisionTopic;
     }
 
-    public String getJudgeEmail() {
-        return judgeEmail;
-    }
-
-    public void setJudgeEmail(String judgeEmail) {
-        this.judgeEmail = judgeEmail;
-    }
 }
