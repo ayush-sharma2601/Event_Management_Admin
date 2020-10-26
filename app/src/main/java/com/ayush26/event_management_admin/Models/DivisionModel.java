@@ -2,6 +2,7 @@ package com.ayush26.event_management_admin.Models;
 
 import android.os.Parcelable;
 
+import com.ayush26.event_management_admin.Models.APIModels.ResultModel;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -39,7 +40,7 @@ public class DivisionModel {
 
     @SerializedName("winner")
     @Expose
-    private JSONObject winners;
+    private ResultModel winners;
 ;
 
     public DivisionModel(int startAge, int endAge, String divisionTopic, String divisionID, String competition_id) {
@@ -49,21 +50,21 @@ public class DivisionModel {
         this.divisionID = divisionID;
         this.competition_id = competition_id;
     }
-//    public DivisionModel(int startAge, int endAge, String divisionTopic, String divisionID, String competition_id,JSONObject winners) {
-//        this.startAge = startAge;
-//        this.endAge = endAge;
-//        this.divisionTopic = divisionTopic;
-//        this.divisionID = divisionID;
-//        this.competition_id = competition_id;
-//        this.winners =winners;
-//    }
+    public DivisionModel(int startAge, int endAge, String divisionTopic, String divisionID, String competition_id,ResultModel winners) {
+        this.startAge = startAge;
+        this.endAge = endAge;
+        this.divisionTopic = divisionTopic;
+        this.divisionID = divisionID;
+        this.competition_id = competition_id;
+        this.winners =winners;
+    }
 
 
-    public JSONObject getWinners() {
+    public ResultModel getWinners() {
         return winners;
     }
 
-    public void setWinners(JSONObject winners) {
+    public void setWinners(ResultModel winners) {
         this.winners = winners;
     }
 

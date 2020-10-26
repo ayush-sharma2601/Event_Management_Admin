@@ -95,38 +95,18 @@ public class DecideWinner extends AppCompatActivity {
 
                                 }
                                 else {
-                                    try {
-                                        binding.firstPosImgUrlField.setText(divisionModel.getWinners().getString("first"));
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                        Log.i("TAG", "onResponse: error ");
-                                    }
+//                                    Log.i("TAG", "onResponse: "+divisionModel.getWinners());
+                                    binding.firstPosImgUrlField.setText(divisionModel.getWinners().getFirst());
+                                    binding.secondPosImgUrlField.setText(divisionModel.getWinners().getSecond());
+                                    binding.thirdPosImgUrlField.setText(divisionModel.getWinners().getThird());
+
+
                                 }
 
-//                                if (divisionModel.getWinners()==null){
-//
-//                                }
-//                                else {
-//                                    try {
-//
-//                                        Log.i("TAG", "onResponse: tried");
-//                                    } catch (JSONException e) {
-//                                        e.printStackTrace();
-//                                    }
-////                                    try {
-////                                        binding.secondPosImgUrlField.setText(divisionModel.getWinners().getJSONObject(1).getString("second"));
-////                                    } catch (JSONException e) {
-////                                        e.printStackTrace();
-////                                    }
-////                                    try {
-////                                        binding.thirdPosImgUrlField.setText(divisionModel.getWinners().getJSONObject(2).getString("third"));
-////                                    } catch (JSONException e) {
-////                                        e.printStackTrace();
-//                                    }
+
 
                                     fillImageViews();
                                 }
-//                            }
                         }
                     }
                     else
