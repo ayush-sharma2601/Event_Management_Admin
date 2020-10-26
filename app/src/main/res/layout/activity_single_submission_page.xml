@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".Activities.SingleSubmissionPage">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
     <ImageButton
         android:layout_width="17dp"
@@ -98,6 +101,8 @@
 
     </LinearLayout>
 
+
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -105,4 +110,18 @@
         android:id="@+id/participant_submission_image"
         android:scaleType="fitCenter"/>
 
-</LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="15sp"
+            android:background="@drawable/button_bg"
+            android:id="@+id/share_url_btn"
+            android:text="Share URL"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat_bold"/>
+
+    </LinearLayout>
+
+</ScrollView>

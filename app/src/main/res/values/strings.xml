@@ -80,4 +80,6 @@
     <string name="update">update</string>
     <string name="edit_divisions">Edit Divisions</string>
     <string name="add_divisions">Add Division</string>
+    <string name="set_winners">Set Winners</string>
+    <string name="provide_urls_for_the_winning_entries">Provide URLs for the winning entries.</string>
 </resources>

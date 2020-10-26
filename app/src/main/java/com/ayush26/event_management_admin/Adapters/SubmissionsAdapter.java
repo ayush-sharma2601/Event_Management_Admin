@@ -69,6 +69,7 @@ public class SubmissionsAdapter extends RecyclerView.Adapter<SubmissionsAdapter.
                     itemView.getContext().startActivity(intent);
                 }
             });
+
         }
     }
 }

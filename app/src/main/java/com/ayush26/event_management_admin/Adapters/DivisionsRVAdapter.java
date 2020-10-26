@@ -17,6 +17,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ayush26.event_management_admin.Activities.AgeGroupEntriesGrid;
+import com.ayush26.event_management_admin.Activities.DecideWinner;
 import com.ayush26.event_management_admin.Activities.DivisionsCreation;
 import com.ayush26.event_management_admin.Activities.EventOnClick;
 import com.ayush26.event_management_admin.Models.APIModels.AgeGroupCodeAPI;
@@ -94,6 +95,17 @@ public class DivisionsRVAdapter extends RecyclerView.Adapter<DivisionsRVAdapter.
                     public void onClick(View view) {
                         itemView.getContext().startActivity(new Intent(itemView.getContext(), AgeGroupEntriesGrid.class)
                         .putExtra("age_group_id",divisionRVModel.getAge_group_id())
+                                .putExtra("group_competition_id",divisionRVModel.getCompetition_id()));
+                    }
+                });
+            }
+            else if (code==4){
+                regNum.setVisibility(View.INVISIBLE);
+                itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        itemView.getContext().startActivity(new Intent(itemView.getContext(), DecideWinner.class)
+                                .putExtra("age_group_id",divisionRVModel.getAge_group_id())
                                 .putExtra("group_competition_id",divisionRVModel.getCompetition_id()));
                     }
                 });

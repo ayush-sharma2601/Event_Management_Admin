@@ -136,4 +136,10 @@ public interface RetrofitAPIInterface {
                                             @Field("age_group_id") String ageGroupID,@Field("start_age") int startAge,
                                             @Field("end_age") int endAge, @Field("name") String name) ;
 
+    //to set result of competition
+    @FormUrlEncoded
+    @POST("/competition/winner/add")
+    Call<APICall> addWinners(@Header("token") String token,@Field("competition_id") String competitionID, @Field("age_group_id") String ageID,
+                             @Field("first") String first,@Field("second") String second, @Field("third") String third);
+
 }

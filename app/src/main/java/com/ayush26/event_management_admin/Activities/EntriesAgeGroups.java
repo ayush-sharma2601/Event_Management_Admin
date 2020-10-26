@@ -31,6 +31,7 @@ public class EntriesAgeGroups extends AppCompatActivity {
     ActivityEntriesAgeGroupsBinding binding;
     DivisionsRVAdapter divisionsRVAdapter;
     ImageButton backBtn;
+    int code;
     ArrayList<DivisionRVModel> divisionRVModels;
     RecyclerView divisionsRV;
     @Override
@@ -43,8 +44,15 @@ public class EntriesAgeGroups extends AppCompatActivity {
 
         final String competitionID = getIntent().getStringExtra("competition_id");
         final String token = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE).getString("token","noToken");
+        final String purpose = getIntent().getStringExtra("purpose");
 
-        setupRV();
+        if (purpose.equals("open"))
+            code=2;
+        else if(purpose.equals("close"))
+            code=4;
+        else code=2;
+
+        setupRV(code);
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,10 +101,10 @@ public class EntriesAgeGroups extends AppCompatActivity {
         });
     }
 
-    private void setupRV() {
+    private void setupRV(int code) {
         binding.entrieDivisionsRv.setLayoutManager(new LinearLayoutManager(EntriesAgeGroups.this,LinearLayoutManager.VERTICAL,false));
         divisionRVModels = new ArrayList<>();
-        divisionsRVAdapter = new DivisionsRVAdapter(divisionRVModels,EntriesAgeGroups.this,2);
+        divisionsRVAdapter = new DivisionsRVAdapter(divisionRVModels,EntriesAgeGroups.this,code);
         binding.entrieDivisionsRv.setAdapter(divisionsRVAdapter);
         divisionsRVAdapter.notifyDataSetChanged();
     }

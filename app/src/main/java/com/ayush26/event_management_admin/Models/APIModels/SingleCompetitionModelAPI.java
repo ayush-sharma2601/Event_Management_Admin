@@ -1,5 +1,7 @@
 package com.ayush26.event_management_admin.Models.APIModels;
 
+import android.widget.ScrollView;
+
 import com.ayush26.event_management_admin.Models.DivisionModel;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -50,7 +52,11 @@ public class SingleCompetitionModelAPI {
     private String genre;
 
 
-    public SingleCompetitionModelAPI(String id, String title, String instructions, String startDate, String endDate, String state, String[] winnerRewards, DivisionModel[] ageGroups, int fee, int totalCollection, String genre) {
+
+
+    public SingleCompetitionModelAPI(String id, String title, String instructions, String startDate, String endDate,
+                                     String state, String[] winnerRewards, DivisionModel[] ageGroups, int fee, int totalCollection,
+                                     String genre) {
         this.id = id;
         this.title = title;
         this.instructions = instructions;
@@ -63,6 +69,8 @@ public class SingleCompetitionModelAPI {
         this.totalCollection = totalCollection;
         this.genre = genre;
     }
+
+
 
     public int getTotalCollection() {
         return totalCollection;

@@ -222,7 +222,7 @@
             android:text=""
             android:id="@+id/competition_fees"/>
 
-        <GridLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:rowCount="2"
@@ -230,26 +230,21 @@
             android:layout_below="@id/collection_header"
             android:layout_marginTop="20dp"
             android:visibility="invisible"
+            android:orientation="vertical"
             android:id="@+id/upcoming_btn_set"
-            android:columnCount="2">
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+
             <Button
                 android:layout_height="62dp"
                 android:layout_width="0dp"
-                android:layout_columnWeight="1"
-                android:layout_column="0"
-                android:layout_marginEnd="15dp"
-                android:layout_row="0"
-                android:id="@+id/delete_event"
-                android:textSize="17sp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/montserrat_bold"
-                android:text="Delete Event"
-                android:textAllCaps="false"
-                android:backgroundTint="@color/eventRed"
-                android:background="@drawable/button_bg"/>
-            <Button
-                android:layout_height="62dp"
-                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_columnWeight="1"
                 android:layout_column="1"
                 android:layout_row="0"
@@ -265,6 +260,7 @@
             <Button
             android:layout_height="62dp"
             android:layout_width="0dp"
+                android:layout_weight="1"
             android:layout_columnWeight="1"
             android:layout_column="0"
             android:layout_marginEnd="15dp"
@@ -278,10 +274,11 @@
             android:textAllCaps="false"
             android:backgroundTint="@color/colorAccent"
             android:background="@drawable/button_bg"/>
+            </LinearLayout>
 
             <Button
             android:layout_height="62dp"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_columnWeight="1"
             android:layout_column="1"
             android:layout_row="1"
@@ -295,7 +292,7 @@
                 android:layout_marginBottom="20dp"
             android:backgroundTint="@color/good_green"
             android:background="@drawable/button_bg"/>
-        </GridLayout>
+        </LinearLayout>
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
@@ -346,7 +343,7 @@
             android:layout_height="62dp"
             android:layout_below="@id/collection_header"
             android:layout_marginHorizontal="20dp"
-            android:text="View Results"
+            android:text="Set Results"
             android:textSize="17sp"
             android:textAllCaps="false"
             android:fontFamily="@font/montserrat_bold"

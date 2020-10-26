@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.ayush26.event_management_admin.Adapters.DivisionsRVAdapter;
@@ -41,8 +42,9 @@ import retrofit2.Response;
 public class EventOnClick extends AppCompatActivity {
 
     ActivityUpcomingEventBinding upBind;
-    Button editEventBtn,deleteEventBtn,startEventBtn,sendAlertBtn,stopEventBtn,seeEntriesBtn,viewResultBtn;
-    GridLayout upcomingSet,ongoingSet;
+    Button editEventBtn,startEventBtn,sendAlertBtn,stopEventBtn,seeEntriesBtn,viewResultBtn;
+    GridLayout ongoingSet;
+    LinearLayout upcomingSet;
     MaterialTextView name,collection;
     String eventState="";
     String competitionID = "";
@@ -52,7 +54,9 @@ public class EventOnClick extends AppCompatActivity {
     RecyclerView divisionsRV;
     SharedPreferences sharedPreferences;
     LoadToast loadToast;
-
+    String first="";
+    String second="";
+    String third="";
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -88,7 +92,7 @@ public class EventOnClick extends AppCompatActivity {
         else if (eventState.equals("COMPLETED")){
             upcomingSet.setVisibility(View.GONE);
             ongoingSet.setVisibility(View.GONE);
-            viewResultBtn.setVisibility(View.GONE);
+            viewResultBtn.setVisibility(View.VISIBLE);
         }
         else if(eventState.equals("ONGOING")){
             upcomingSet.setVisibility(View.GONE);
@@ -117,12 +121,7 @@ public class EventOnClick extends AppCompatActivity {
             }
         });
 
-        deleteEventBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //api call to delete competition
-            }
-        });
+
 
         sendAlertBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -154,7 +153,16 @@ public class EventOnClick extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //go to age group division page
-                startActivity(new Intent(EventOnClick.this,EntriesAgeGroups.class).putExtra("competition_id",competitionID));
+                startActivity(new Intent(EventOnClick.this,EntriesAgeGroups.class).putExtra("competition_id",competitionID)
+                .putExtra("purpose","open"));
+            }
+        });
+
+        viewResultBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(EventOnClick.this,EntriesAgeGroups.class).putExtra("competition_id",competitionID)
+                .putExtra("purpose","close"));
             }
         });
 
@@ -165,7 +173,6 @@ public class EventOnClick extends AppCompatActivity {
     private void attachID() {
         //link IDs
         editEventBtn = findViewById(R.id.edit_event);
-        deleteEventBtn = findViewById(R.id.delete_event);
         startEventBtn = findViewById(R.id.start_event);
         sendAlertBtn = findViewById(R.id.alert_event);
         stopEventBtn = findViewById(R.id.end_event);
@@ -198,6 +205,7 @@ public class EventOnClick extends AppCompatActivity {
                 {
                     if (response.code()==200){
 //                        Toast.makeText(EventOnClick.this,"Information saved",Toast.LENGTH_SHORT).show();
+                        Log.i("TAG", "onResponse:>>>>>>>>>>>>>>>>>>>>>> Got response");
                         SingleCompetitionModelAPI competitionBody = response.body().getCompetitionAPIModel();
                         upBind.competitionName.setText(competitionBody.getTitle());
                         upBind.competitionGenre.setText(competitionBody.getGenre());
@@ -209,6 +217,7 @@ public class EventOnClick extends AppCompatActivity {
                         upBind.competitionInstructionsField.setText(competitionBody.getInstructions());
                         upBind.startTime.setText(competitionBody.getStartDate().substring(11,16));
                         upBind.endTime.setText(competitionBody.getEndDate().substring(11,16));
+
 
                     }
                     else

@@ -2,7 +2,11 @@ package com.ayush26.event_management_admin.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -17,6 +21,7 @@ import com.ayush26.event_management_admin.RetrofitClient;
 import com.ayush26.event_management_admin.databinding.ActivitySingleSubmissionPageBinding;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.net.ContentHandler;
 import java.util.Arrays;
@@ -61,6 +66,36 @@ public class SingleSubmissionPage extends AppCompatActivity {
             token = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE).getString("token","noToken");
             setAdminInfo(token,submissionID);
         }
+
+        pageBinding.shareUrlBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MaterialAlertDialogBuilder builder =new MaterialAlertDialogBuilder(SingleSubmissionPage.this);
+                builder.setTitle("Share URL")
+                        .setMessage(String.format("URL for this submission: \n%s",photoURL))
+                        .setPositiveButton("share with admin", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent sendIntent = new Intent();
+                                sendIntent.setAction(Intent.ACTION_SEND);
+                                sendIntent.putExtra(Intent.EXTRA_TEXT, photoURL);
+                                sendIntent.setType("text/plain");
+
+                                Intent shareIntent = Intent.createChooser(sendIntent, null);
+                                startActivity(shareIntent);
+                            }
+                        })
+                        .setNeutralButton("copy to clipboard", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                ClipboardManager clipboardManager=(ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
+                                ClipData clipData=ClipData.newPlainText("code",String.format("%s",photoURL));
+                                clipboardManager.setPrimaryClip(clipData);
+                                Toast.makeText(SingleSubmissionPage.this,"URL has been copied",Toast.LENGTH_SHORT).show();
+                            }
+                        }).show();
+            }
+        });
 
 
     }
