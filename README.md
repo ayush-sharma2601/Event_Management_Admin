@@ -19,7 +19,7 @@ A competition management app for the NGO, Inner Wheel Club of Vasco-Da-Gama.
 ## About the Project
 
 This is the admin side app for the Event Management App to add and edit new competitions and manange judgement and allocations of prizes.
-[![Event Management App](https://img.shields.io/badge/-Event_Management_App-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://github.com/ritvij14/Event-management)](https://github.com/ritvij14/Event-management)
+[![Event Management App](https://img.shields.io/badge/-Event_Management_App-grey?style=flat-square&logo=Github&logoColor=white&link=https://github.com/ritvij14/Event-management)](https://github.com/ritvij14/Event-management)
 
 ### Build With
 
